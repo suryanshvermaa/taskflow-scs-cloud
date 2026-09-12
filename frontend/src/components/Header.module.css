@@ -1,0 +1,99 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.logo {
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 0.8125rem;
+  color: var(--color-muted);
+  margin: 0;
+  margin-top: 1px;
+}
+
+/* ── Status badge ───────────────────────────────────────────── */
+.statusBadge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  background: var(--color-background);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+
+.statusText {
+  color: var(--color-muted);
+}
+
+/* connecting */
+.connecting .dot {
+  background: var(--color-warning);
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+/* connected */
+.connected {
+  border-color: var(--color-success-border);
+  background: var(--color-success-bg);
+}
+.connected .dot {
+  background: var(--color-success);
+}
+.connected .statusText {
+  color: var(--color-success-text);
+}
+
+/* offline */
+.offline {
+  border-color: var(--color-danger-border);
+  background: var(--color-danger-bg);
+}
+.offline .dot {
+  background: var(--color-danger);
+}
+.offline .statusText {
+  color: var(--color-danger-text);
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.35; }
+}
+

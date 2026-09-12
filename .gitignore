@@ -1,0 +1,32 @@
+# ── Node / Frontend ───────────────────────────────────────────────────────────
+node_modules/
+frontend/dist/
+frontend/.env.local
+frontend/.env.production.local
+frontend/.env.development.local
+
+# NOTE: frontend/.env is intentionally NOT ignored.
+# It contains only VITE_API_URL which is public (embedded in the JS bundle
+# by Vite at build time). SCS Cloud Static Website needs it during the build.
+
+# ── Go / Backend ──────────────────────────────────────────────────────────────
+backend/data/
+*.db
+*.db-shm
+*.db-wal
+
+# Backend secrets — configure these in the SCS Cloud Container Service.
+backend/.env
+
+# Build artifacts
+backend/taskflow-api
+backend/server
+
+# ── IDE / OS ──────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+

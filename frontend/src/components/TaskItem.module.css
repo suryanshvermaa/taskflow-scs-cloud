@@ -1,0 +1,172 @@
+.item {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  transition: box-shadow 0.15s, border-color 0.15s;
+}
+
+.item:hover {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+/* ── Completed state ────────────────────────────────────────── */
+.item.completed {
+  background: var(--color-surface-muted);
+  opacity: 0.75;
+}
+
+.item.completed .title {
+  text-decoration: line-through;
+  color: var(--color-muted);
+}
+
+/* ── Top row ─────────────────────────────────────────────────── */
+.top {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+/* ── Check button ─────────────────────────────────────────────── */
+.checkBtn {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  margin-top: 2px;
+}
+
+.checkBtn:focus-visible .checkCircle {
+  box-shadow: 0 0 0 3px var(--color-focus-ring);
+}
+
+.checkBtn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.checkCircle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--color-border-strong);
+  background: var(--color-surface);
+  color: var(--color-primary);
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.item.completed .checkCircle {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+
+/* ── Content ─────────────────────────────────────────────────── */
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-text);
+  margin: 0;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.description {
+  font-size: 0.8125rem;
+  color: var(--color-muted);
+  margin: 4px 0 0;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+/* ── Footer ──────────────────────────────────────────────────── */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--color-border);
+}
+
+.date {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-2);
+}
+
+/* ── Action buttons ──────────────────────────────────────────── */
+.actionBtn {
+  padding: 5px 12px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  font-family: inherit;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  cursor: pointer;
+  outline: none;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.actionBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.actionBtn:focus-visible {
+  box-shadow: 0 0 0 3px var(--color-focus-ring);
+}
+
+.toggleBtn {
+  color: var(--color-primary);
+  border-color: var(--color-primary-border);
+  background: var(--color-primary-bg);
+}
+
+.toggleBtn:hover:not(:disabled) {
+  background: var(--color-primary-hover-bg);
+  border-color: var(--color-primary);
+}
+
+.deleteBtn {
+  color: var(--color-danger-text);
+  border-color: var(--color-danger-border);
+  background: var(--color-danger-bg);
+}
+
+.deleteBtn:hover:not(:disabled) {
+  background: var(--color-danger-hover-bg);
+  border-color: var(--color-danger);
+}
+
+/* ── Inline error ────────────────────────────────────────────── */
+.errorMsg {
+  font-size: 0.8125rem;
+  color: var(--color-danger-text);
+  margin: 0;
+  padding: 6px 10px;
+  background: var(--color-danger-bg);
+  border: 1px solid var(--color-danger-border);
+  border-radius: var(--radius-sm);
+}
+
